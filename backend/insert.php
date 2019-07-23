@@ -1,9 +1,11 @@
 <?php
 require "./libs/data_base.php";
+require "./libs/cors.php";
 header('Content-Type: application/json');
+cors();
 $json = [
     "erreur"         => true, /* indique si il y a une erreur ou non */
-    "erreur_message" => "en attente de connexion frontent", /* il indique le message d'erreur pour les front */
+    "erreur_message" => "unknow error", /* il indique le message d'erreur pour les front */
     "reponse_formulaire"       => "" /* il sert à afficher se qu'on envoie aux front - les données de réponses */
 ];
 
@@ -20,18 +22,17 @@ if (
     $price = htmlspecialchars($_REQUEST['price']);
     // $id_fournisseur = htmlspecialchars($_REQUEST['id_fournisseur']);
 
-    try {
-        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $requete = $bdd->prepare('INSERT INTO produits (name, ref, price, qty)
+
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $requete = $bdd->prepare('INSERT INTO produits (name, ref, price, qty)
         VALUES (?, ?, ?, ?)');
-        $res =  $requete->execute(array(
-            $name, $ref, $price, $qty
-        ));
-    } catch (Exception $e) {
-        echo $e->getMessage();
-    }
+    $res =  $requete->execute(array(
+        $name, $ref, $price, $qty
+    ));
+
     $json['erreur'] = !$res;
     if ($res) {
+        $json['erreur_message'] = "";
         $json['reponse_formulaire'] = 'Votre formulaire a bien été envoyé!';
     } else {
         $json['erreur_message'] = "Erreur d'envoie formulaire";

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mar. 23 juil. 2019 à 09:56
+-- Généré le :  mar. 23 juil. 2019 à 14:57
 -- Version du serveur :  10.1.38-MariaDB
--- Version de PHP :  7.1.28
+-- Version de PHP :  7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,20 +30,42 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `produits` (
   `id_produit` int(11) NOT NULL,
-  `nom` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ref` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `qte` int(11) NOT NULL,
-  `prix` int(11) NOT NULL
+  `qty` int(11) NOT NULL,
+  `price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `produits`
 --
 
-INSERT INTO `produits` (`id_produit`, `nom`, `ref`, `qte`, `prix`) VALUES
+INSERT INTO `produits` (`id_produit`, `name`, `ref`, `qty`, `price`) VALUES
 (1, 'Pommes', '001', 10, 5),
 (2, 'Melons', '002', 6, 10),
-(3, 'Ananas', '003', 12, 20);
+(3, 'Ananas', '003', 12, 20),
+(7, 'momo', 'AAB01', 14, 15),
+(8, 'momo', 'AAB01', 14, 15),
+(9, 'momo', 'AAB01', 14, 15),
+(10, 'momo', 'AAB01', 14, 15),
+(11, 'mo', 'AAB01', 14, 15),
+(12, 'mo', 'AAB01', 14, 15),
+(13, 'mo', 'AAB01', 14, 15),
+(14, 'mo', 'AAB01', 14, 15),
+(15, 'mo', 'AAB01', 14, 15),
+(16, 'mo', 'AAB01', 14, 15),
+(17, 'mohyh', 'AAB01', 14, 15),
+(18, 'mohyh', 'AAB01', 14, 15),
+(19, 'mohyh', 'AAB01', 14, 15),
+(20, 'mohyh', 'AAB01', 14, 15),
+(21, 'pppph', 'AAB01', 14, 15),
+(22, 'roro', 'ad124', 14, 25),
+(23, 'Tom', 'tom', 500, 2),
+(24, 'ppppjkivguivh', 'AAB01', 14, 15),
+(25, 'uyuy', 'uydud', 14, 25),
+(26, 'htru', 'kfuk', 14, 12),
+(27, 'popo', 'yui', 14, 69),
+(28, 'momo', 'ppp', 100, 12);
 
 -- --------------------------------------------------------
 
@@ -116,7 +138,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `produits`
 --
 ALTER TABLE `produits`
-  MODIFY `id_produit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_produit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT pour la table `users`
