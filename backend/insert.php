@@ -8,24 +8,24 @@ $json = [
 ];
 
 if (
-    isset($_REQUEST['nom']) and isset($_REQUEST['ref'])  and isset($_REQUEST['prix'])
-    and isset($_REQUEST['qte'])  and isset($_REQUEST['fournisseur'])
-    and !empty($_REQUEST['nom']) and !empty($_REQUEST['ref']) and !empty($_REQUEST['prix'])
-    and !empty($_REQUEST['qte'])  and !empty($_REQUEST['fournisseur'])
+    isset($_REQUEST['name']) and isset($_REQUEST['ref'])  and isset($_REQUEST['price'])
+    and isset($_REQUEST['qty'])  and isset($_REQUEST['id_fournisseur'])
+    and !empty($_REQUEST['name']) and !empty($_REQUEST['ref']) and !empty($_REQUEST['price'])
+    and !empty($_REQUEST['qty'])  and !empty($_REQUEST['id_fournisseur'])
 ) {
 
-    $nom = htmlspecialchars($_REQUEST['nom']);
+    $name = htmlspecialchars($_REQUEST['name']);
     $ref = $_REQUEST['ref'];
-    $prix = $_REQUEST['prix'];
-    $qte = $_REQUEST['qte'];
-    $fournisseur = $_REQUEST['fournisseur'];
+    $price = $_REQUEST['price'];
+    $qty = $_REQUEST['qty'];
+    $id_fournisseur = $_REQUEST['id_fournisseur'];
 
     try {
         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $requete = $bdd->prepare('INSERT INTO produits (nom, ref, prix, qte, fournisseur)
+        $requete = $bdd->prepare('INSERT INTO produits (name, ref, price, qty, id_fournisseur)
         VALUES (?, ?, ?, ?, ?)');
         $res =  $requete->execute(array(
-            $nom, $ref, $prix, $qte, $fournisseur
+            $name, $ref, $price, $qty, $id_fournisseur
         ));
     } catch (Exception $e) {
         echo $e->getMessage();
