@@ -31,10 +31,10 @@ if ($num > 0) {
 
         $product_item = array(
             "id_produit" => $id_produit,
-            "nom" => $nom,
+            "nom" => $name,
             "reference" => $ref,
-            "quantite" => $qte,
-            "prix" => $prix,
+            "quantite" => $qty,
+            "prix" => $price,
         );
 
         array_push($products_arr["produits"], $product_item);

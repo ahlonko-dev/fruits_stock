@@ -7,10 +7,10 @@ class Produits
 
     // Proprietes des objets
     public $id_produit;
-    public $nom;
+    public $name;
     public $ref;
-    public $qte;
-    public $prix;
+    public $qty;
+    public $price;
 
     public function __construct($bdd)
     {
