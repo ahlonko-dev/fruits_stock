@@ -13,7 +13,7 @@ const ListeProduits = {
     <!-- on vérifie que products n'est pas vide, et puis on boucle avec v-for sur un tableau d'objet "item" -->
     <table class="tableProduits" v-if="products" id="example-1">
         <tr>
-            <th>Nom du produit</th>
+            <th>Produits</th>
             <th>Quantité</th>
             <th>Prix</th>
             <th><router-link class="routeur" to="/produits/ajouterProduit">Ajouter un produit</router-link></th>
