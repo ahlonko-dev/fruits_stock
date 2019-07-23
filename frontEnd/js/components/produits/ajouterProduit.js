@@ -50,8 +50,11 @@ const AjouterProduit = {
                 axios.post('http://localhost/xampp/api/fruits_stock/backend/insert.php', params).then(response => {
                     console.log(response);
 
+
                     this.loading = false;
-                    if(response.data.status=="success"){
+                    console.log(response.data.erreur);
+
+                    if(response.data.erreur==false){
                         this.message="Le produit a bien été ajouté";
                     }
                     else{
