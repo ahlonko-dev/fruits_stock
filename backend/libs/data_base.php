@@ -6,7 +6,7 @@
         // echo "connecté à la bd Avec DEBUG";
     }
 
-    $dbname   = "fruits_stock";
+    $dbname   = "fruit_stocks";
     $host     = "localhost";
     $charset  = "utf8";
     $dbuser   = "root";
