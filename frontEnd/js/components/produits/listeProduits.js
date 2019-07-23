@@ -2,6 +2,17 @@ const ListeProduits = {
     template:
      `
     <div class="container">
+        <div class="row">
+            <div class="col-6 col-md-4 col-lg-2">
+                <img src="images/Logo.jpg" class="image" alt="Logo Diksi">
+            </div>
+            <div class="col-2 col-md-4 col-lg-8">
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="boutonAjouterProduit"><router-link class="routeur" to="/produits/ajouterProduit">Ajouter un produit</router-link>
+                </div>
+            </div>
+        </div>
         <div class="post">
             <div v-if="loading" class="loading">
                 Loading...
@@ -13,19 +24,27 @@ const ListeProduits = {
         
             <!-- on vérifie que products n'est pas vide, et puis on boucle avec v-for sur un tableau d'objet "item" -->
             <table class="tableProduits" v-if="products" id="example-1">
-                <tr>
-                    <th>Produits</th>
-                    <th>Quantité</th>
-                    <th>Prix</th>
-                    <th>Fournisseurs</th>
-                    <th><router-link class="routeur" to="/produits/ajouterProduit">Ajouter un produit</router-link></th>
+                <tr class="row">
+                    <td class="col-3 col-md-3 col-lg-3"></td>
+                    <td class="col-2 col-md-2 col-lg-2 produits hautColonne">Produits</td>
+                    <td class="col-1 col-md-1 col-lg-1"></td>
+                    <td class="col-2 col-md-2 col-lg-2 produits hautColonne">Quantité</td>
+                    <td class="col-2 col-md-2 col-lg-2 produits hautColonne">Prix</td>
+                    <td class="col-2 col-md-2 col-lg-2"></td>
                 </tr>
-                <tr v-for="item in products">
-                    <td><router-link :to="{ name: 'detailProduit', params: { id: item.id_product }}">{{ item.name }}</router-link></td>
-                    <td>{{ item.qty }} </td>
-                    <td>{{ item.price }} </td>
+                <tr class="row" v-for="item in products">
+                    <td class="col-3 col-md-3 col-lg-3"></td>
+                    <td class="col-2 col-md-2 col-lg-2 produits">{{ item.name }} </td>
+                    <td class="col-2 col-md-1 col-lg-1 boutonDetail"><router-link class="texteBoutton" :to="{ name: 'detailProduit', params: { id: item.id_product }}">détail</router-link></td>
+                    <td class="col-2 col-md-2 col-lg-2 produits">{{ item.qty }} </td>
+                    <td class="col-2 col-md-2 col-lg-2 produits">{{ item.price }} </td>
                 </tr>
             </table>
+
+            <div >
+            <div class="col-0 col-md-2 col-lg-2">
+
+
         </div>
     </div>
 `,
@@ -50,7 +69,9 @@ const ListeProduits = {
     methods: {
 
         fetchData() {
-            axios.get('http://api.sirius-school.be/product-v2/product/list').then(response => {
+            axios.get('http://192.168.1.63/api/fruits_stock/backend/read.php').then(response => {
+            /*axios.get('https://api.sirius-school.be/product-v2/product/list').then(response => {*/
+
                 console.log(response);
                 this.loading = false;
                 this.products = response.data.products;

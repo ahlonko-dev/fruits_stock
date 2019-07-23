@@ -47,7 +47,7 @@ const AjouterProduit = {
                 params.append('qty', this.item.qty);
                 params.append('price', this.item.price);
 
-                axios.post('http://api.sirius-school.be/product-v2/product/insert', params).then(response => {
+                axios.post('http://192.168.1.63/api/fruits_stock/backend/insert.php', params).then(response => {
                     console.log(response);
 
                     this.loading = false;
