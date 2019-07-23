@@ -1,7 +1,5 @@
 <?php
 require "./libs/data_base.php";
-/* $database = new Database();
-$db = $database->getConnection(); */
 header('Content-Type: application/json');
 $json = [
     "erreur"         => true, /* indique si il y a une erreur ou non */
