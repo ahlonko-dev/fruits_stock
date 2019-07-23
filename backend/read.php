@@ -22,7 +22,7 @@ if ($num > 0) {
 
     // produits array
     $products_arr = array();
-    $products_arr["produits"] = array();
+    $products_arr["products"] = array();
 
     // boucle pour afichez 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -30,14 +30,14 @@ if ($num > 0) {
         extract($row);
 
         $product_item = array(
-            "id_produit" => $id_produit,
-            "nom" => $name,
-            "reference" => $ref,
-            "quantite" => $qty,
-            "prix" => $price,
+            "id_product" => $id_produit,
+            "name" => $name,
+            "ref" => $ref,
+            "quantity" => $qty,
+            "price" => $price,
         );
 
-        array_push($products_arr["produits"], $product_item);
+        array_push($products_arr["products"], $product_item);
     }
 
     // reponse code - 200 OK

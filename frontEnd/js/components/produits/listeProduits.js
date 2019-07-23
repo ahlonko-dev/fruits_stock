@@ -69,7 +69,7 @@ const ListeProduits = {
     methods: {
 
         fetchData() {
-            axios.get('http://192.168.1.63/api/fruits_stock/backend/read.php').then(response => {
+            axios.get('http://localhost/xampp/api/fruits_stock/backend/read.php').then(response => {
             /*axios.get('https://api.sirius-school.be/product-v2/product/list').then(response => {*/
 
                 console.log(response);
