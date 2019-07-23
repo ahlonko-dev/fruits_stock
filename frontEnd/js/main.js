@@ -19,23 +19,6 @@ const routes = [
     {path: '/produits/ajouterProduit', name: 'ajouterProduit', component: AjouterProduit},
     {path: '/produits/modifierProduit', name: 'modifierProduit', component: ModifierProduit},
     {path: '/produits/:id', name: 'detailProduit', component: DetailProduit},
-
-    {path: '/clients/listeClients', name: 'listeClients', component: ListeClients},
-    {path: '/clients/ajouterClient', name: 'ajouterClient', component: AjouterClient},
-    {path: '/clients/modifierClient', name: 'modifierClient', component: ModifierClient},
-    {path: '/clients/:id', name: 'detailClient', component: DetailClient},
-
-    {path: '/team/listeTeam', name: 'listeTeam', component: ListeTeam},
-    {path: '/team/ajouterMembreTeam', name: 'ajouterMembreTeam', component: AjouterMembreTeam},
-    {path: '/team/modifierMembreTeam', name: 'modifierMembreTeam', component: ModifierMembreTeam},
-    {path: '/team/:id', name: 'detailMembreTeam', component: DetailMembreTeam},
-
-    {path: '/fournisseurs/listeFournisseurs', name: 'listeFournisseurs', component: ListeFournisseurs},
-    {path: '/fournisseurs/ajouterFournisseur', name: 'ajouterFournisseur', component: AjouterFournisseur},
-    {path: '/fournisseurs/modifierFournisseur', name: 'modifierFournisseur', component: ModifierFournisseur},
-    {path: '/fournisseurs/:id', name: 'detailFournisseur', component: DetailFournisseur},
-
-    {path: '/contact', name: 'contact', component: Contact},
 ];
 
 // 3. Create the router instance and pass the `routes` option
