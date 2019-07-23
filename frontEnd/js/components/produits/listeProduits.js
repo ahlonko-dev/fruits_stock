@@ -1,30 +1,33 @@
 const ListeProduits = {
-    template: `
-    <div class="post">
-    <h1>Liste des produits</h1>
-    <div v-if="loading" class="loading">
-      Loading...
-    </div>
+    template:
+     `
+    <div class="container">
+        <div class="post">
+            <div v-if="loading" class="loading">
+                Loading...
+            </div>
 
-    <div v-if="error" class="error">
-      {{ error }}
+            <div v-if="error" class="error">
+                {{ error }}
+            </div>
+        
+            <!-- on vérifie que products n'est pas vide, et puis on boucle avec v-for sur un tableau d'objet "item" -->
+            <table class="tableProduits" v-if="products" id="example-1">
+                <tr>
+                    <th>Produits</th>
+                    <th>Quantité</th>
+                    <th>Prix</th>
+                    <th>Fournisseurs</th>
+                    <th><router-link class="routeur" to="/produits/ajouterProduit">Ajouter un produit</router-link></th>
+                </tr>
+                <tr v-for="item in products">
+                    <td><router-link :to="{ name: 'detailProduit', params: { id: item.id_product }}">{{ item.name }}</router-link></td>
+                    <td>{{ item.qty }} </td>
+                    <td>{{ item.price }} </td>
+                </tr>
+            </table>
+        </div>
     </div>
-    
-    <!-- on vérifie que products n'est pas vide, et puis on boucle avec v-for sur un tableau d'objet "item" -->
-    <table class="tableProduits" v-if="products" id="example-1">
-        <tr>
-            <th>Nom du produit</th>
-            <th>Quantité</th>
-            <th>Prix</th>
-            <th><router-link class="routeur" to="/produits/ajouterProduit">Ajouter un produit</router-link></th>
-        </tr>
-        <tr v-for="item in products">
-            <td><router-link :to="{ name: 'detailProduit', params: { id: item.id_product }}">{{ item.name }}</router-link></td>
-            <td>{{ item.qty }} </td>
-            <td>{{ item.price }} </td>
-        </tr>
-    </table>
-  </div>
 `,
 
 
