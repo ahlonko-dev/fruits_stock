@@ -1,5 +1,5 @@
 <?php
-class Product
+class Produits
 {
 
     // Connexion Base de donnee et le nom de la  table
@@ -12,14 +12,6 @@ class Product
     public $ref;
     public $qte;
     public $prix;
-
-    // public $created;
-
-    // constructeur avec la base de donnee (connexion)
-    public function __construct($db)
-    {
-        $this->conn = $db;
-    }
 
     // Function lire les produits
     function read()

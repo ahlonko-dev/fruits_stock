@@ -5,15 +5,15 @@ header("Content-Type: application/json; charset=UTF-8");
 
 // include Connextion base de donnee 
 // include base de donnee et fichier obets
-include_once './libs/configdb.php';
-include_once './objets/produits.php';
+require_once './libs/data_base.php';
+require_once './objets/produits.php';
 
 // instantiate base de donnee et produits objets 
 $database = new Database();
 $db = $database->getConnection();
 
 // initialize objets
-$product = new Product($db);
+$product = new Produits($db);
 
 
 // query produits
@@ -25,7 +25,7 @@ if ($num > 0) {
 
     // produits array
     $products_arr = array();
-    $products_arr["records"] = array();
+    $products_arr["produits"] = array();
 
     // boucle pour afichez 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -40,7 +40,7 @@ if ($num > 0) {
             "prix" => $prix,
         );
 
-        array_push($products_arr["records"], $product_item);
+        array_push($products_arr["produits"], $product_item);
     }
 
     // reponse code - 200 OK
