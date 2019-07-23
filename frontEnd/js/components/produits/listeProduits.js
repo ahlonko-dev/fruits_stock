@@ -36,7 +36,7 @@ const ListeProduits = {
                     <td class="col-3 col-md-3 col-lg-3"></td>
                     <td class="col-2 col-md-2 col-lg-2 produits">{{ item.name }} </td>
                     <td class="col-2 col-md-1 col-lg-1 boutonDetail"><router-link class="texteBoutton" :to="{ name: 'detailProduit', params: { id: item.id_product }}">détail</router-link></td>
-                    <td class="col-2 col-md-2 col-lg-2 produits">{{ item.qty }} </td>
+                    <td class="col-2 col-md-2 col-lg-2 produits">{{ item.quantity }} </td>
                     <td class="col-2 col-md-2 col-lg-2 produits">{{ item.price }} </td>
                 </tr>
             </table>
