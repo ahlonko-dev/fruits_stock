@@ -3,7 +3,6 @@ class Produits
 {
 
     // Connexion Base de donnee et le nom de la  table
-    private $conn;
     private $table_name = "produits";
 
     // Proprietes des objets
@@ -12,6 +11,11 @@ class Produits
     public $ref;
     public $qte;
     public $prix;
+
+    public function __construct($bdd)
+    {
+        $this->conn = $bdd;
+    }
 
     // Function lire les produits
     function read()

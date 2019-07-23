@@ -8,12 +8,9 @@ header("Content-Type: application/json; charset=UTF-8");
 require_once './libs/data_base.php';
 require_once './objets/produits.php';
 
-// instantiate base de donnee et produits objets 
-$database = new Database();
-$db = $database->getConnection();
 
 // initialize objets
-$product = new Produits($db);
+$product = new Produits($bdd);
 
 
 // query produits
