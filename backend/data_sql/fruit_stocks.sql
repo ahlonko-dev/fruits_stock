@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mar. 23 juil. 2019 à 14:57
+-- Généré le :  mer. 24 juil. 2019 à 11:07
 -- Version du serveur :  10.1.38-MariaDB
--- Version de PHP :  7.3.2
+-- Version de PHP :  7.1.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `produits` (
-  `id_produit` int(11) NOT NULL,
+  `id_product` int(11) NOT NULL,
   `name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ref` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `qty` int(11) NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE `produits` (
 -- Déchargement des données de la table `produits`
 --
 
-INSERT INTO `produits` (`id_produit`, `name`, `ref`, `qty`, `price`) VALUES
+INSERT INTO `produits` (`id_product`, `name`, `ref`, `qty`, `price`) VALUES
 (1, 'Pommes', '001', 10, 5),
 (2, 'Melons', '002', 6, 10),
 (3, 'Ananas', '003', 12, 20),
@@ -109,7 +109,7 @@ CREATE TABLE `users` (
 -- Index pour la table `produits`
 --
 ALTER TABLE `produits`
-  ADD PRIMARY KEY (`id_produit`);
+  ADD PRIMARY KEY (`id_product`);
 
 --
 -- Index pour la table `produits_users`
@@ -138,7 +138,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `produits`
 --
 ALTER TABLE `produits`
-  MODIFY `id_produit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT pour la table `users`
@@ -155,7 +155,7 @@ ALTER TABLE `users`
 --
 ALTER TABLE `produits_users`
   ADD CONSTRAINT `produits_users_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`),
-  ADD CONSTRAINT `produits_users_ibfk_2` FOREIGN KEY (`id_produit`) REFERENCES `produits` (`id_produit`);
+  ADD CONSTRAINT `produits_users_ibfk_2` FOREIGN KEY (`id_produit`) REFERENCES `produits` (`id_product`);
 
 --
 -- Contraintes pour la table `roles`
