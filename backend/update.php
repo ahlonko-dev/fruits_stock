@@ -37,7 +37,7 @@ if (
     $up_requeser->execute();
     if ($up_requeser) {
         $json['erreur'] = false;
-        $json['update'] = "update succes";
+        $json['update'] = "succes";
         $json['erreur_message'] = "Pas d'erreur";
     } else {
         $json['erreur_message'] = "erreur mis à jour";
