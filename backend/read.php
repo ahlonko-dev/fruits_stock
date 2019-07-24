@@ -30,7 +30,7 @@ if ($num > 0) {
         extract($row);
 
         $product_item = array(
-            "id_product" => $id_produit,
+            "id_product" => $id_product,
             "name" => $name,
             "ref" => $ref,
             "quantity" => $qty,

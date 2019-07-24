@@ -17,11 +17,11 @@ $product = new Produits($bdd);
 
 // obtenir l'id du produit
 //$data = json_decode(file_get_contents("php://input"));
-$data = $_GET['id_produit'];;
+$data = $_GET['id_product'];;
 
 // définir de l'id du produit à supprimer
 //$product->id_produit = $data->id_produit;
-$product->id_produit = $data;
+$product->id_product = $data;
 
 
 // supprime le produit

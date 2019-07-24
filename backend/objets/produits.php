@@ -6,7 +6,7 @@ class Produits
     private $table_name = "produits";
 
     // Proprietes des objets
-    public $id_produit;
+    public $id_product;
     public $name;
     public $ref;
     public $qty;
@@ -41,16 +41,16 @@ class Produits
     {
 
         // sql query pour suprimer
-        $query = "DELETE FROM " . $this->table_name . " WHERE id_produit = ?";
+        $query = "DELETE FROM " . $this->table_name . " WHERE id_product = ?";
 
         // prepare query
         $stmt = $this->conn->prepare($query);
 
         // Proteger l'id et recuperer
-        $this->id_produit = htmlspecialchars(strip_tags($this->id_produit));
+        $this->id_product = htmlspecialchars(strip_tags($this->id_product));
 
         // lier l'id de l'enregistrement à supprimer
-        $stmt->bindParam(1, $this->id_produit);
+        $stmt->bindParam(1, $this->id_product);
 
         // execute query
         if ($stmt->execute()) {
