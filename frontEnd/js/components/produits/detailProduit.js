@@ -15,8 +15,8 @@ const DetailProduit = {
         <p v-if="item">
             Id Produit: {{ item.id_product }} <br />
             Nom: {{ item.name}} <br />
-            Référence: {{ item.ref}} <br />
-            Quantity: {{ item.qty}} <br />
+            Référence: {{ item.reference}} <br />
+            Quantity: {{ item.quantity}} <br />
             Prix: {{ item.price}} <br />
             <button v-on:click="deleteProduct">Supprimer ce produit</button>
             <router-link :to="{ name: 'modifierProduit', params: { id: item.id_product }}">Modifier</router-link>
@@ -79,11 +79,11 @@ const DetailProduit = {
                 const params = new URLSearchParams();
                 params.append('id', this.$route.params.id);
 
-                axios.post('http://api.sirius-school.be/product-v2/product/delete', params).then(response => {
+                axios.post(URL+'/delete.php?id_product='+this.$route.params.id, params).then(response => {
                     console.log(response.data);
 
                     this.loading = false;
-                    if (response.data.status == "success") {
+                    if (response.data.message == "Le produit a été supprimé.") {
                         this.messageDeleted = "Le produit a bien été supprimé";
                     }
                     else {
