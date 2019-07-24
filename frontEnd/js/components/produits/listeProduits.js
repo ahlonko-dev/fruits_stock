@@ -23,9 +23,7 @@ const ListeProduits = {
             <table class="tableProduits" v-if="products" id="example-1">
                 <tr class="row">
                     <td class="col-2 col-md-2 col-lg-2 produits hautColonne colGauche">Produits</td>
-                    <td class="col-2 col-md-2 col-lg-2 produits hautColonne colMilieu">Quantité</td>
-                    <td class="col-2 col-md-2 col-lg-1 produits hautColonne colMilieu">Prix</td>
-
+                    <td class="col-2 col-md-2 col-lg-2 produits hautColonne colDroite">Quantité</td>
                     <td class="col-2 col-md-2 col-lg-2"><div class="boutonAjouterProduit"><router-link class="routeur" to="/produits/ajouterProduit">Ajouter un produit</router-link></td>
 
                 </tr>
@@ -42,7 +40,10 @@ const ListeProduits = {
         </div>
     </div>
 `,
-/*                    <td class="col-1 col-md-2 col-lg-1 produits hautColonne colDroite"></td>
+/*                    
+                    <td class="col-2 col-md-2 col-lg-1 produits hautColonne colMilieu">Prix</td>
+
+<td class="col-1 col-md-2 col-lg-1 produits hautColonne colDroite"></td>
                     <td class="col-2 col-md-2 col-lg-1 produits">{{ item.price }} </td>
 */
 

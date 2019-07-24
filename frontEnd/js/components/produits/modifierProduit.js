@@ -15,8 +15,8 @@ const ModifierProduit = {
 
     <div>
         Nom: <input type="text" v-model="item.name"/><br />
-        Référence: <input type="text" v-model="item.ref"/><br />
-        Quantity: <input type="text" v-model="item.qty"/><br />
+        Référence: <input type="text" v-model="item.reference"/><br />
+        Quantity: <input type="text" v-model="item.quantity"/><br />
         Prix: <input type="text" v-model="item.price"/><br />
         <button v-on:click="modifyProduct">Valider Modification</button>
     </div>
@@ -61,11 +61,11 @@ const ModifierProduit = {
             //dans notre exemple on avait : axios.post('http://files.sirius-school.be/products-api/?action=getDetail' + this.$route.params.id, params).then(response => {
             // -> le post qu'on avait de base se faisait avec le paramètre "id" ajouté dans l'url => "+ this.$route.params.id"
             //      -> mais ici, on ne met pas l'id dans l'url, il doit être en paramètre
-            axios.post('http://files.sirius-school.be/products-api/?action=getDetail', params).then(response => {
+                axios.post(URL+'/detail.php?id_product='+this.$route.params.id, params).then(response => {
+
                 console.log(response.data);
                 this.loading = false;
-                this.item = response.data.product;
-            });
+                this.item = response.data;            });
         },
 
         modifyProduct() {
@@ -73,11 +73,11 @@ const ModifierProduit = {
             const params = new URLSearchParams();
             params.append('id', this.$route.params.id);
             params.append('name', this.item.name);
-            params.append('ref', this.item.ref);
-            params.append('qty', this.item.qty);
+            params.append('reference', this.item.reference);
+            params.append('quantity', this.item.quantity);
             params.append('price', this.item.price);
 
-            axios.post('http://api.sirius-school.be/product-v2/product/update', params).then(response => {
+            axios.post('http://192.168.1.63/api/fruits_stock/backend/update.php?id_product='+this.$route.params.id, params).then(response => {
                 console.log(response);
 
                 if (response.data.status == "success") {
