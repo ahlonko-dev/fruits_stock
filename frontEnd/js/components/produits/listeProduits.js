@@ -20,23 +20,26 @@ const ListeProduits = {
             </div>
         
             <!-- on vérifie que products n'est pas vide, et puis on boucle avec v-for sur un tableau d'objet "item" -->
-            <table class="tableProduits" v-if="products" id="example-1">
-                <tr class="row">
-                    <td class="col-2 col-md-2 col-lg-2 produits hautColonne colGauche">Produits</td>
-                    <td class="col-2 col-md-2 col-lg-2 produits hautColonne colDroite">Quantité</td>
-                    <td class="col-2 col-md-2 col-lg-2"><div class="boutonAjouterProduit"><router-link class="routeur" to="/produits/ajouterProduit">Ajouter un produit</router-link></td>
-
-                </tr>
-                <tr class="row" v-for="item in products">
-                    <td class="col-2 col-md-2 col-lg-2 produits">{{ item.name }} </td>
-                    <td class="col-2 col-md-2 col-lg-2 produits">{{ item.quantity }} </td>
-                    <td class="col-2 col-md-1 col-lg-1 boutonDetail"><router-link class="texteBoutton" :to="{ name: 'detailProduit', params: { id: item.id_product }}">détail</router-link></td>
-
-                    <td class="col-0 col-md-2 col-lg-2"></td>
-                </tr>
-            </table>
-
-
+            <div class="row">
+                <div class="col-12 col-md-7 col-lg-7">
+                    <table class="tableProduits" v-if="products" id="example-1">
+                        <tr>
+                            <th class="colonneProduits">Produits</td>
+                            <th class="colonneVide"></td>
+                            <th class="colonneQuantite">Quantité</td>
+                            <th class="colonneDetail"><div class="boutonAjouterProduit"><router-link class="routeur" to="/produits/ajouterProduit">Ajouter un produit</router-link></td>
+                        </tr>
+                        <tr v-for="item in products">
+                            <td class="colonneProduits">{{ item.name }} </td>
+                            <td class="colonneVide"></td>
+                            <td class="colonneQuantite">{{ item.quantity }} </td>
+                            <td class="colonneDetail"><router-link class=" texteBoutton" :to="{ name: 'detailProduit', params: { id: item.id_product }}">Détail</router-link></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-0 col-md-5 col-lg-5">
+                </div>
+            </div>
         </div>
     </div>
 `,

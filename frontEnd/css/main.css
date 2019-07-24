@@ -31,12 +31,15 @@ nav{
     font-weight: bold;
 }
 
-table{
-
-    border-spacing: 15px 10px;
+.tableProduits{
+    border-collapse:separate; 
+    border-spacing:0 15px; 
 }
 
-
+tr{
+    padding: 10px;
+    margin: 10px;
+}
 
 .boutonAjouterProduit{
     background-color: rgb(116, 192, 66);
@@ -59,22 +62,20 @@ table{
     color: black;
 }
 
-.hautColonne{
-    background-color: rgb(199, 57, 68);
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-
-}
-
 .boutonDetail{
     background-color: rgb(195, 154, 37); 
+    width: 100%;
     border-radius: 5px 5px;
     text-decoration: none;
     text-align: center;
     font-weight: bold;
     padding: 5px;
     color: black;
+}
+
+th{
+    font-weight: bold;
+
 }
 
 .tableProduits{
@@ -110,6 +111,7 @@ nav{
 }
 
 .colGauche{
+    border-left: none;
     border-right: none;
 
 }
@@ -122,5 +124,13 @@ nav{
 
 .colDroite{
     border-left: none;
+    border-right: none;
 }
 
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {    background-color: rgb(233, 211, 14);
+}
+
+.colonneDetail{
+    background-color: white;
+}

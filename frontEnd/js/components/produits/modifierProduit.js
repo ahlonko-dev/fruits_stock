@@ -71,16 +71,16 @@ const ModifierProduit = {
         modifyProduct() {
 
             const params = new URLSearchParams();
-            params.append('id', this.$route.params.id);
-            params.append('name', this.item.name);
-            params.append('reference', this.item.reference);
-            params.append('quantity', this.item.quantity);
-            params.append('price', this.item.price);
+            params.append('id_product', this.$route.params.id);
+            params.append('new_name', this.item.name);
+            params.append('new_ref', this.item.reference);
+            params.append('new_qty', this.item.quantity);
+            params.append('new_price', this.item.price);
 
             axios.post('http://192.168.1.63/api/fruits_stock/backend/update.php?id_product='+this.$route.params.id, params).then(response => {
                 console.log(response);
 
-                if (response.data.status == "success") {
+                if (response.data.update == "success") {
                     this.message = "Le produit a bien été mis à jour";
                 }
                 else {
