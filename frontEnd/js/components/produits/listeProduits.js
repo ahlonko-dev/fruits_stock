@@ -15,7 +15,7 @@ const ListeProduits = {
         </div>
         <div class="post">
             <div v-if="loading" class="loading">
-                Loading...
+                Loading...AAAA
             </div>
 
             <div v-if="error" class="error">
@@ -27,7 +27,7 @@ const ListeProduits = {
                 <tr class="row">
                     <td class="col-3 col-md-3 col-lg-3"></td>
                     <td class="col-2 col-md-2 col-lg-2 produits hautColonne">Produits</td>
-                    <td class="col-1 col-md-1 col-lg-1"></td>
+                    <td class="col-1 col-md-1 col-lg-1 produits hautColonne"></td>
                     <td class="col-2 col-md-2 col-lg-2 produits hautColonne">Quantité</td>
                     <td class="col-2 col-md-2 col-lg-2 produits hautColonne">Prix</td>
                     <td class="col-2 col-md-2 col-lg-2"></td>
@@ -38,11 +38,9 @@ const ListeProduits = {
                     <td class="col-2 col-md-1 col-lg-1 boutonDetail"><router-link class="texteBoutton" :to="{ name: 'detailProduit', params: { id: item.id_product }}">détail</router-link></td>
                     <td class="col-2 col-md-2 col-lg-2 produits">{{ item.quantity }} </td>
                     <td class="col-2 col-md-2 col-lg-2 produits">{{ item.price }} </td>
+                    <td class="col-0 col-md-2 col-lg-2"></td>
                 </tr>
             </table>
-
-            <div >
-            <div class="col-0 col-md-2 col-lg-2">
 
 
         </div>
