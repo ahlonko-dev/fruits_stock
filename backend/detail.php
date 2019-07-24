@@ -8,7 +8,7 @@ cors();
 $json = [
     "erreur"         => true, /* indique si il y a une erreur ou non */
     "erreur_message" => "unknow error", /* il indique le message d'erreur pour les front */
-    "data_details_produit"       => "" /* il sert à afficher se qu'on envoie aux front - les données de réponses */
+    "name"       => "" /* il sert à afficher se qu'on envoie aux front - les données de réponses */
 ];
 
 if
@@ -36,7 +36,7 @@ if ($requete && $requete->rowCount() == 1){
     $json['erreur']=false;
     $json['erreur_message']="";
     $json['id_product']=$row['id_product'];
-    $json['data_details_produit']=$row['name'];
+    $json['name']=$row['name'];
     $json['price']=$row['price'];
     $json['quantity']=$row['qty'];
     $json['reference']=$row['ref'];
