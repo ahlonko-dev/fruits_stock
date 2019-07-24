@@ -25,14 +25,13 @@ const ListeProduits = {
                     <td class="col-2 col-md-2 col-lg-2 produits hautColonne colGauche">Produits</td>
                     <td class="col-2 col-md-2 col-lg-2 produits hautColonne colMilieu">Quantité</td>
                     <td class="col-2 col-md-2 col-lg-1 produits hautColonne colMilieu">Prix</td>
-                    <td class="col-1 col-md-2 col-lg-1 produits hautColonne colDroite"></td>
+
                     <td class="col-2 col-md-2 col-lg-2"><div class="boutonAjouterProduit"><router-link class="routeur" to="/produits/ajouterProduit">Ajouter un produit</router-link></td>
 
                 </tr>
                 <tr class="row" v-for="item in products">
                     <td class="col-2 col-md-2 col-lg-2 produits">{{ item.name }} </td>
                     <td class="col-2 col-md-2 col-lg-2 produits">{{ item.quantity }} </td>
-                    <td class="col-2 col-md-2 col-lg-1 produits">{{ item.price }} </td>
                     <td class="col-2 col-md-1 col-lg-1 boutonDetail"><router-link class="texteBoutton" :to="{ name: 'detailProduit', params: { id: item.id_product }}">détail</router-link></td>
 
                     <td class="col-0 col-md-2 col-lg-2"></td>
@@ -43,7 +42,9 @@ const ListeProduits = {
         </div>
     </div>
 `,
-
+/*                    <td class="col-1 col-md-2 col-lg-1 produits hautColonne colDroite"></td>
+                    <td class="col-2 col-md-2 col-lg-1 produits">{{ item.price }} </td>
+*/
 
     data() {
         return {
