@@ -17,7 +17,7 @@ if (
         "update" => ""
     ];
     $id_product = intval($_REQUEST['id_product']);
-    $name = ($_REQUEST['id_product']);
+    $name = ($_REQUEST['new_name']);
     $price = ($_REQUEST['new_price']);
     $qty = ($_REQUEST['new_qty']);
     $ref = ($_REQUEST['new_ref']);
@@ -37,8 +37,8 @@ if (
     $up_requeser->execute();
     if ($up_requeser) {
         $json['erreur'] = false;
-        $json['update'] = "ok";
-        $json['erreur_message'] = "";
+        $json['update'] = "update succes";
+        $json['erreur_message'] = "Pas d'erreur";
     } else {
         $json['erreur_message'] = "erreur mis à jour";
     }
