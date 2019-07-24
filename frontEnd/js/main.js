@@ -2,7 +2,7 @@
 // https://jsonplaceholder.typicode.com/users
 // https://jsonplaceholder.typicode.com/albums?userId=1
 
-
+var URL = "http://192.168.1.63/api/fruits_stock/backend";
 // 1. Define route components.
 // These can be imported from other files
 
@@ -34,3 +34,7 @@ const router = new VueRouter({
 const app = new Vue({
     router
 }).$mount('#app');
+
+
+// Ajouté pour le travail interfiliaire
+

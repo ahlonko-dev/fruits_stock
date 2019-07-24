@@ -59,10 +59,15 @@ const DetailProduit = {
             //dans notre exemple on avait : axios.post('http://files.sirius-school.be/products-api/?action=getDetail' + this.$route.params.id, params).then(response => {
             // -> le post qu'on avait de base se faisait avec le paramètre "id" ajouté dans l'url => "+ this.$route.params.id"
             //      -> mais ici, on ne met pas l'id dans l'url, il doit être en paramètre
-            axios.post('http://api.sirius-school.be/product-v2/product/detail', params).then(response => {
+            /*axios.post('http://api.sirius-school.be/product-v2/product/detail', params).then(response => {*/
+            axios.post(URL+'/detail.php?id_product='+this.$route.params.id, params).then(response => {
+
+                
                 console.log(response);
 
-                this.item = response.data.product;
+                this.item = response.data;
+                console.log("item est égal à"+this.item);
+
             });
         },
 

@@ -47,7 +47,7 @@ const AjouterProduit = {
                 params.append('qty', this.item.qty);
                 params.append('price', this.item.price);
 
-                axios.post('http://localhost/xampp/api/fruits_stock/backend/insert.php', params).then(response => {
+                axios.post(URL+'/insert.php', params).then(response => {
                     console.log(response);
 
 

@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(197, 184, 187);
+    background-color: white;
 }
 
 .error{
@@ -50,9 +50,8 @@ table{
 }
 
 .produits{
-    background-color: rgb(125, 83, 84); 
-    border-radius: 5px;
-    border-spacing :5px;
+    border-style: solid;
+    border-color: solid black ;
     text-align: center;
     font-weight: bold;
     margin: 0px;
@@ -71,7 +70,6 @@ table{
     text-decoration: none;
     text-align: center;
     font-weight: bold;
-    margin: 5px;
     padding: 5px;
     color: black;
 }
