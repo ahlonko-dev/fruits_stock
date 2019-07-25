@@ -42,7 +42,7 @@ class Produits
     {
 
         // sql query pour suprimer
-        $query = "DELETE FROM " . $this->table_name . " p WHERE id_product = ?";
+        $query = "DELETE FROM " . $this->table_name . " WHERE id_product = ?";
 
         // prepare query
         $stmt = $this->conn->prepare($query);
