@@ -11,6 +11,7 @@ class Produits
     public $ref;
     public $qty;
     public $price;
+    public $id_provider;
 
     public function __construct($bdd)
     {
@@ -41,7 +42,7 @@ class Produits
     {
 
         // sql query pour suprimer
-        $query = "DELETE FROM " . $this->table_name . " WHERE id_product = ?";
+        $query = "DELETE FROM " . $this->table_name . " p WHERE id_product = ?";
 
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -58,5 +59,35 @@ class Produits
         }
 
         return false;
+    }
+
+    // Function recherche de produits
+    function search($keywords)
+    {
+
+        // select all query
+        $query = "SELECT
+        *
+    FROM
+        " . $this->table_name . " 
+    
+    WHERE
+        name LIKE ? ";
+
+
+        // préparer une requête
+        $stmt = $this->conn->prepare($query);
+
+        // Proteger l'input
+        $keywords = htmlspecialchars(strip_tags($keywords));
+        $keywords = "%{$keywords}%";
+
+        // bind
+        $stmt->bindParam(1, $keywords);
+
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
     }
 }
