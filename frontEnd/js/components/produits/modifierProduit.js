@@ -79,8 +79,10 @@ const ModifierProduit = {
 
             axios.post('http://192.168.1.63/api/fruits_stock/backend/update.php?id_product='+this.$route.params.id, params).then(response => {
                 console.log(response);
+                console.log(response.data.erreur);
+                
 
-                if (response.data.status == "success") {
+                if (response.data.erreur == false) {
                     this.message = "Le produit a bien été mis à jour";
                 }
                 else {
