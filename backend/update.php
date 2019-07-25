@@ -6,10 +6,10 @@ cors();
 /* session_start(); */
 if (
     isset($_REQUEST['id_product']) and !empty($_REQUEST['id_product'])
-    and isset($_REQUEST['new_name']) and !empty($_REQUEST['new_name'])
-    and isset($_REQUEST['new_price']) and !empty($_REQUEST['new_price'])
-    and isset($_REQUEST['new_qty']) and !empty($_REQUEST['new_qty'])
-    and isset($_REQUEST['new_ref']) and !empty($_REQUEST['new_ref'])
+    and isset($_REQUEST['name']) and !empty($_REQUEST['name'])
+    and isset($_REQUEST['price']) and !empty($_REQUEST['price'])
+    and isset($_REQUEST['qty']) and !empty($_REQUEST['qty'])
+    and isset($_REQUEST['ref']) and !empty($_REQUEST['ref'])
 ) {
     $json = [
         "erreur"                 => true, /* indique si il y a une erreur ou non */
@@ -17,10 +17,10 @@ if (
         "update" => ""
     ];
     $id_product = intval($_REQUEST['id_product']);
-    $name = ($_REQUEST['new_name']);
-    $price = ($_REQUEST['new_price']);
-    $qty = ($_REQUEST['new_qty']);
-    $ref = ($_REQUEST['new_ref']);
+    $name = ($_REQUEST['name']);
+    $price = ($_REQUEST['price']);
+    $qty = ($_REQUEST['qty']);
+    $ref = ($_REQUEST['ref']);
     $up_requeser  = $bdd->prepare("UPDATE produits 
                                 SET name =:name, 
                                     price =:price,
@@ -43,7 +43,7 @@ if (
     }
 } else {
     $json['erreur'] = true;
-    $json['erreur_message'] = "You must send this param with POST: id_product, new_name, new_price, new_qty";
+    $json['erreur_message'] = "You must send this param with POST: id_product, name, price, qty";
     // die("erreur not get id_product");
 }
 
