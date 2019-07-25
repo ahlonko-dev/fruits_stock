@@ -13,10 +13,10 @@
 <body>
     <div id="app">
 
-        <!--<nav>
+        <nav>
             <ul>
                 <li class="liRouteur">
-                    <router-link class="routeur" to="/">Home</router-link>
+                    <router-link class="routeur" to="/">Accueil</router-link>
                 </li>
                 <li class="liRouteur">
                     <router-link class="routeur" to="/produits/listeProduits">Liste des Produits</router-link>
@@ -25,7 +25,8 @@
                     <router-link class="routeur" to="/produits/ajouterProduit">Ajouter un produit</router-link>
                 </li>
             </ul>
-        </nav>-->
+        </nav>
+
         <router-view></router-view>
     </div>
 
@@ -41,6 +42,7 @@
 
     <!-- components -->
 
+    <script src="js/components/accueil.js"></script>
     <script src="js/components/produits/modifierProduit.js"></script>
     <script src="js/components/produits/ajouterProduit.js"></script>
     <script src="js/components/produits/listeProduits.js"></script>

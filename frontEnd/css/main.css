@@ -131,11 +131,11 @@ nav{
     border-right: none;
 }
 
-.tableProduits:nth-child(even) {
+.tableProduits tr:nth-child(even) {
     background: #CCC;
 }
 
-.tableProduits:nth-child(odd) {    
+.tableProduits tr:nth-child(odd) {    
     background-color: rgb(233, 211, 14);
 }
 
