@@ -14,7 +14,7 @@ nav{
     background-color: white;
 }
 
-.routeur {
+.button {
     display: inline-block;
     flex-direction: column;
     align-items: center;
@@ -29,14 +29,39 @@ nav{
     text-decoration: none;
     text-align: center;
     font-weight: bold;
+    font-size: 20px;
+
+}
+
+.colonneVide{
+    width: 20%;
 }
 
 table{
+    border-collapse:collapse; 
 
-    border-spacing: 15px 10px;
 }
 
+.tableProduits{
+    border-collapse:separate; 
+    border-spacing:0 15px; 
+    border-color: solid black;
+    width: 100%;
+}
 
+tr{
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+    text-align: center;
+
+
+}
+
+.colonneQuantite{
+    padding: 10px;
+
+}
 
 .boutonAjouterProduit{
     background-color: rgb(116, 192, 66);
@@ -44,31 +69,12 @@ table{
     border-spacing :5px;
     text-align: center;
     font-weight: bold;
-
-
-
-}
-
-.produits{
-    border-style: solid;
-    border-color: solid black ;
-    text-align: center;
-    font-weight: bold;
-    margin: 0px;
-    padding: 0px;
-    color: black;
-}
-
-.hautColonne{
-    background-color: rgb(199, 57, 68);
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-
+    margin: 0% 5%;
 }
 
 .boutonDetail{
     background-color: rgb(195, 154, 37); 
+    width: 100%;
     border-radius: 5px 5px;
     text-decoration: none;
     text-align: center;
@@ -77,8 +83,11 @@ table{
     color: black;
 }
 
-.tableProduits{
-    width: 100%;
+th{
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+
 }
 
 ul{
@@ -91,10 +100,6 @@ ul{
 
 }
 
-.tableProduits{
-    border-collapse: collapse;
-    border-color: solid black;
-}
 
 
 
@@ -110,6 +115,7 @@ nav{
 }
 
 .colGauche{
+    border-left: none;
     border-right: none;
 
 }
@@ -122,5 +128,42 @@ nav{
 
 .colDroite{
     border-left: none;
+    border-right: none;
 }
 
+.table-line tr:nth-child(even) {
+    background: #CCC;
+}
+
+tr:nth-child(odd) {    
+    background-color: rgb(233, 211, 14);
+}
+
+.colonneDetail{
+    background-color: white;
+}
+
+.titreProduit{
+    background-color: rgb(100, 226, 100);
+    font-weight: bold;
+    font-size: 25px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.boutonPageDetail{
+    width: 100%;
+    border-radius: 5px;
+    background-color: rgb(87, 92, 87);
+    font-weight: bold;
+    padding: 5px 15px;
+    margin: 10px 0;
+}
+
+.fa-arrow-left{
+    font-size:50px;
+}
+
+.flecheretour{
+    display: inline-block;
+}
