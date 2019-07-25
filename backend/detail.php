@@ -8,14 +8,12 @@ cors();
 $json = [
     "erreur"         => true, /* indique si il y a une erreur ou non */
     "erreur_message" => "unknow error", /* il indique le message d'erreur pour les front */
-    "name"       => "" /* il sert à afficher se qu'on envoie aux front - les données de réponses */
+    $json['product'] = "" /* il sert à afficher se qu'on envoie aux front - les données de réponses */
 ];
 
 if (isset($_REQUEST["id_product"]) and !empty($_REQUEST["id_product"])) {
     //on va créer la variable
     $id_product = intval($_REQUEST["id_product"]);
-
-
     $sql = "SELECT * FROM produits WHERE id_product = :id_product;";
     //on fait une requête dans la sql
     $requete = $bdd->prepare($sql);
