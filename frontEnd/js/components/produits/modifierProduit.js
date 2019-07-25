@@ -71,10 +71,10 @@ const ModifierProduit = {
         modifyProduct() {
 
             const params = new URLSearchParams();
-            params.append('id', this.$route.params.id);
+            params.append('id_product', this.$route.params.id);
             params.append('name', this.item.name);
-            params.append('reference', this.item.reference);
-            params.append('quantity', this.item.quantity);
+            params.append('ref', this.item.reference);
+            params.append('qty', this.item.quantity);
             params.append('price', this.item.price);
 
             axios.post('http://192.168.1.63/api/fruits_stock/backend/update.php?id_product='+this.$route.params.id, params).then(response => {
