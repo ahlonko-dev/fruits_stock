@@ -1,15 +1,12 @@
 const Accueil = {
     template:
      `
-    <div class="container">
+    <div>
         <div class="row">
             <div class="col-6 col-md-4 col-lg-2">
                 <img src="images/Logo.jpg" class="image" alt="Logo Diksi">
             </div>
-            <div class="col-2 col-md-4 col-lg-10">
-            </div>
 
-        </div>
         <div class="post">
             <div v-if="loading" class="loading">
                 Loading...
@@ -36,9 +33,9 @@ const Accueil = {
                 </tr>
             </table>
 
-
         </div>
     </div>
+
 `,
 /*                    
                     <td class="col-2 col-md-2 col-lg-1 produits hautColonne colMilieu">Prix</td>
