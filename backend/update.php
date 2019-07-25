@@ -3,7 +3,7 @@ require "./libs/data_base.php";
 require "./libs/cors.php";
 header('Content-Type: application/json');
 cors();
-session_start();
+/* session_start(); */
 if (
     isset($_REQUEST['id_product']) and !empty($_REQUEST['id_product'])
     and isset($_REQUEST['new_name']) and !empty($_REQUEST['new_name'])
@@ -21,7 +21,6 @@ if (
     $price = ($_REQUEST['new_price']);
     $qty = ($_REQUEST['new_qty']);
     $ref = ($_REQUEST['new_ref']);
-
     $up_requeser  = $bdd->prepare("UPDATE produits 
                                 SET name =:name, 
                                     price =:price,

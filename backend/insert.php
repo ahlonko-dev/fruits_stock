@@ -21,10 +21,7 @@ if (
     $qty = htmlspecialchars($_REQUEST['qty']);
     $price = htmlspecialchars($_REQUEST['price']);
     // $id_fournisseur = htmlspecialchars($_REQUEST['id_fournisseur']);
-
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // copie colle ne pose pas de question ça marche
-
-
     $requete = $bdd->prepare('INSERT INTO produits (name, ref, price, qty)
         VALUES (?, ?, ?, ?)');
     $res =  $requete->execute(array(

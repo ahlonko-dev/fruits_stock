@@ -16,7 +16,7 @@ if (isset($_REQUEST["id_product"]) and !empty($_REQUEST["id_product"])) {
     $id_product = intval($_REQUEST["id_product"]);
 } else {
     $json['erreur_message'] = "On a pas obtenu id du produit";
-    echo json_encode($json);
+    /* echo json_encode($json); */
     die;
 }
 $sql = "SELECT * FROM produits WHERE id_product=:id_product;";
